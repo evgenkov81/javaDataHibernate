@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 
 import java.io.Serializable;
@@ -27,19 +26,8 @@ public class Person implements Serializable {
     @Id
     @Column
     private int age;
-    @Column
-    private int phone_number;
-    @Column
-    private String city_of_living;
-    @jakarta.persistence.Id
-    @GeneratedValue
-    private Long id;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
+    @Column (name = "phone_number")
+    private int phoneNumber;
+    @Column (name = "city_of_living")
+    private String cityOfLiving;
 }
